@@ -3,15 +3,49 @@
 <html>
     <head>
         <title>Basics of HTML</title>
+      <!--  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> -->
+        <style>
+            
+            h2{color: blue;
+            font-family: Lobster,monospace;
+            }
+            p{font-size: 20px;
+                font-family: monospace;
+            }
+            .red-text{
+                color: red;
+        
+                
+            }
+            .Image-size
+            {
+                width:250px;
+            }
+            .border
+            {
+                border-width: 10px;
+                border-color: green;
+                border-style: solid;
+                border-radius: 50%;
+            }
+            .bgcolor
+            {
+                background-color: silver;
+            }
+            #form
+            {
+                background-color: aqua;
+            }
+        </style>
     </head>
     <body>
 <h1>This is h1 Tag</h1>
-<h2>This is h2 Tag</h2>
+<h2 style="color:red;">This is h2 Tag</h2>
 
 
 <p>Showcase of Anchor Tag within Page</p><a href="#foot1">Go to footer</a></p>
 
-<h2>showcase of "P" Tag</h2>
+<h2 class="red-text">showcase of "P" Tag</h2>
 <p>A paragraph (from the Ancient Greek παράγραφος paragraphos,
      "to write beside" or "written beside") is a self-contained unit
       of a discourse in writing dealing with a particular point or idea.
@@ -25,7 +59,7 @@
          and relates well to the topic.
 </p>
 <h2>Image Tag</h2>
-<img src="IMG_20100101_014625.jpg" alt = "Nature Photograph" height="200" width="200">
+<img class="Image-size border" src="IMG_20100101_014625.jpg" alt = "Nature Photograph" >
 <h2>Anchor Tab</h2>
 <a href="https://www.flipkart.com">Here You Go to Flipkart</a>
 
@@ -34,8 +68,8 @@
 <a href = "#">This is a dead link</a>
 
 <h2>Image as Link</h2>
-<a href="http://babies.com/"><img src="baby.jpg"  height="200" width="200"></a>
-<div>
+<a href="http://babies.com/"><img class="Image-size border" src="baby.jpg" ></a>
+<div class="bgcolor">
 <h2>Creating Unordered or Bullet List</h2>
 <ul>
     <li>Black</li>
@@ -56,7 +90,7 @@
 </div>
 
 <h2>Form Action, Text Box & Required field,Button,Radio & Checkboxes</h2>
-<form action="">
+<form action="" id="form">
     <p>First Name : <input type="Text"  placeholder="Enter First Name" required></p>
     <p>Second Name : <input type="Text"  placeholder="Enter Second Name"></p>
   <label>
