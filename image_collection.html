@@ -4,7 +4,7 @@
   </head>
   <style>
     header {
-      font-size: 50px;
+      font-size: 5rem;
       text-align: center;
     }
     #image-grid {
@@ -21,30 +21,32 @@
     #image-grid .item img {
       width: 100%;
       height: auto !important;
-
     }
 
-  @media (max-width: 1000px) {
-    #image-grid {
-  
-  
-   column-count:         3;
-   }
-  }  
-@media (max-width: 800px) {
-    #image-grid {
-  
-
-   column-count:         2;
-   }
-  }  
-@media (max-width: 400px) {
-    #image-grid {
-   
-  
-    column-count:        1;
-   }
-  }
+    @media (max-width: 1000px) {
+      #image-grid {
+        column-count: 3;
+      }
+      header {
+        font-size: 3rem;
+      }
+    }
+    @media (max-width: 800px) {
+      #image-grid {
+        column-count: 2;
+      }
+      header{
+          font-size: 2rem;
+      }
+    }
+    @media (max-width: 400px) {
+      #image-grid {
+        column-count: 1;
+      }
+      header{
+          font-size: 1rem;
+      }
+    }
   </style>
   <body>
     <header>Collection of Images</header>
