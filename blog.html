@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    .container {
+      display: inline-block;
+      margin: 50px 50px 20px;
+    }
+    .container_2 {
+      padding: 20px;
+      display: block;
+    }
+    span {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+      font-family: "Poppins", Helvetica, Arial, sans-serif;
+      text-align: justify;
+      line-height: 27px;
+    }
+    input[type="button"] {
+      background: rgb(26, 26, 168);
+      color: white;
+      padding: 5px;
+      height: 60px;
+      width: 150px;
+      /* margin-left: 10px; */
+      font-size: 1.2rem;
+      /* margin: 20px 50px; */
+    }
+
+    input[type="button"]:hover {
+      cursor: pointer;
+      background-color: skyblue;
+    }
+    div.Image_div {
+      width: 50%;
+      float: left;
+      text-align: center;
+      padding-top: 5%;
+    }
+    header {
+      text-align: center;
+      font-size: 40px;
+      text-decoration-style: solid;
+      text-decoration: blue;
+    }
+    #span_text {
+      text-align: center;
+      font-size: 20px;
+    }
+    .Para_div {
+      width: 50%;
+      float: left;
+      height: 100%;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 700px) {
+      .container {
+        display: block;
+      }
+      .Para_div {
+        width: 100%;
+      }
+      div.Image_div {
+        width: 100%;
+        margin-top: -20%;
+        margin-bottom: 20%;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .container {
+        display: block;
+      }
+      .Para_div {
+        width: 100%;
+      }
+      div.Image_div {
+        width: 100%;
+        margin-top: 50%;
+        margin-bottom: 20%;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      .container {
+        display: block;
+      }
+      .Para_div {
+        width: 100%;
+      }
+      div.Image_div {
+        width: 100%;
+        margin-top: 170%;
+        margin-bottom: 20%;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="Para_div">
+        <span><strong>About Us</strong></span>
+        <p>
+          Following an ironclad vision to create a web world that is beyond its
+          technical aspects, we started at a pace of beginners. With a founder
+          who has barely touched his late twenties and yet has a steadfast
+          determination, the vibe of Huptech’s workspace is a perfect blend of
+          eccentricity and professionalism. An approach to web development
+          that’s tried and tested meets the fresh scope here at Huptech which
+          never fails to reflect. Our team’s proficiency in handling each stage
+          of the web development process has only added feathers to our caps.
+          With a team that breathes through creativity, but never forget to add
+          feasibility, Huptech is only a source of success.
+        </p>
+        <div><input type="button" name="btn" value="Read More..." /></div>
+      </div>
+      <div class="Image_div"><img src="working_man-150x150-1.png" /></div>
+    </div>
+
+    <div class="container_2">
+      <div>
+        <header>Our<strong> Services</strong></header>
+      </div>
+      <div class="Para_2">
+        <p>
+          Online presence is no more a matter of having a web address that’s
+          visitable. We instill life in the online existence of our clients by
+          tunneling right strategies on web development, web designing, digital
+          marketing, SEO, and content. We make sure your business matches
+          strides with technical advancements. It’s just a matter of sealing the
+          deal!
+        </p>
+      </div>
+
+      <div>
+        <p id="span_text">
+          We Are Open To Proffer Our Adroitness In Following Areas:
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
