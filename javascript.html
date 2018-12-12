@@ -1,0 +1,231 @@
+<html>
+  <style>
+    #myInput {
+      
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: 30%;
+      font-size: 16px;
+      padding: 12px 20px 12px 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+    div {
+      font-size: 25px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    table {
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    select {
+      font-size: 25px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <body>
+    <select onchange="sortSelection()" id="mySelect">
+      <option value="Name">Name</option>
+      <option value="Age">Age</option>
+      <option value="ID">ID</option>
+      <option value="City">City</option>
+    </select>
+   <p> <input
+      type="text"
+      id="myInput"
+      onkeyup="myFunction()"
+      placeholder="Search for names.."
+      title="Type in a name"
+    /></p>
+    <div id="demo"></div>
+
+    
+
+    <script>
+      var Employee = [
+        {
+          name: "Nikunj",
+          id: 1,
+          age: 28,
+          city: "Gandhidham"
+        },
+        {
+          name: "Jayesh",
+          id: 2,
+          age: 25,
+          city: "Bharuch"
+        },
+        {
+          name: "Sudesh",
+          id: 3,
+          age: 24,
+          city: "Surat"
+        },
+        {
+          name: "Janti",
+          id: 4,
+          age: 19,
+          city: "Bhabhar"
+        },
+        {
+          name: "shailesh",
+          id: 5,
+          age: 22,
+          city: "Morvada"
+        },
+        {
+          name: "Kanu",
+          id: 6,
+          age: 30,
+          city: "Bukoli"
+        },
+        {
+          name: "Ranchhod",
+          id: 7,
+          age: 31,
+          city: "Chatra"
+        },
+        {
+          name: "Jetho",
+          id: 8,
+          age: 32,
+          city: "Udaipuir"
+        }
+      ];
+      var PText = "<table id=myTable>";
+      PText +=
+        "<tr>" +
+        "<th>" +
+        "Name" +
+        "</th>" +
+        "<th>" +
+        "Age" +
+        "</th>" +
+        "<th>" +
+        "ID" +
+        "</th>" +
+        "<th>" +
+        "City" +
+        "</th>" +
+        "</tr>";
+
+      for (let i = 0; i < Employee.length; i++) {
+        PText += "<tr>";
+        PText +=
+          "<td>" +
+          Employee[i].name +
+          "</td>" +
+          "<td>" +
+          Employee[i].age +
+          "</td>" +
+          "<td>" +
+          Employee[i].id +
+          "</td>" +
+          "<td>" +
+          Employee[i].city +
+          "</td>";
+        PText += "</tr>";
+      }
+      document.getElementById("demo").innerHTML = PText;
+
+      function sortSelection() {
+        var x = document.getElementById("mySelect").value;
+        switch (x) {
+          case "Name":
+            sortTable(0);
+            break;
+          case "City":
+            sortTable(3);
+            break;
+          case "Age":
+            sortTableInt(1);
+            break;
+          case "ID":
+            sortTableInt(2);
+            break;
+        }
+      }
+
+      function sortTable(td) {
+        let table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+
+          for (i = 1; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+
+            x = rows[i].getElementsByTagName("TD")[td];
+            y = rows[i + 1].getElementsByTagName("TD")[td];
+
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+      function sortTableInt(td) {
+        let table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+
+          for (i = 1; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+
+            x = rows[i].getElementsByTagName("TD")[td];
+            y = rows[i + 1].getElementsByTagName("TD")[td];
+
+            if (parseInt(x.innerHTML) > parseInt(y.innerHTML)) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+
+      function myFunction() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
