@@ -1,0 +1,46 @@
+<html>
+  <style>
+    button {
+      width: 20%;
+      margin: 20px;
+    }
+    input {
+      width: 60%;
+    }
+  </style>
+
+  <body>
+    <div id="container">
+      <button id="down" onclick="ValueUpDown(false)" >Down</button>
+      <input
+        type="number"
+        value="0"
+        id="counter"
+        name="counter"
+        readonly
+      />
+      <button id="up" onclick="ValueUpDown(true)">Up</button>
+    </div>
+ 
+  <script>
+
+    function ValueUpDown(IsUp) {
+        let x;
+        x = document.getElementById("counter").value;
+        if(IsUp){
+        x++;
+        }
+        else
+        {
+          x--;
+        }
+        counter.value = x;
+    }
+
+      
+    
+   
+
+  </script>
+</body>
+</html>
