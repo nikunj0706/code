@@ -76,7 +76,7 @@
         table.innerHTML = sortedRows;
       }
 
-         function FilterTable() {
+      function FilterTable() {
         let input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
@@ -147,18 +147,18 @@
           }
         ];
         var PText = `<table id=myTable><tr>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>ID</th>
-                                <th>City</th></tr>`;
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>ID</th>
+                                            <th>City</th></tr>`;
 
         for (let i = 0; i < Employee.length; i++) {
           PText += `<tr>
-                                  <td>${Employee[i].name}</td>
-                                  <td>${Employee[i].age}</td>
-                                  <td>${Employee[i].id}</td>
-                                  <td>${Employee[i].city}</td>
-                                  </tr>`;
+                                              <td>${Employee[i].name}</td>
+                                              <td>${Employee[i].age}</td>
+                                              <td>${Employee[i].id}</td>
+                                              <td>${Employee[i].city}</td>
+                                              </tr>`;
         }
         document.getElementById("demo").innerHTML = PText;
       }

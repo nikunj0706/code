@@ -75,35 +75,106 @@ input[type=text], input[type=email],input[type=tel],input[type=password]{
           <div class="row">
             <div class="label-column"><label>First Name</label> </div>
             <div class="userInput-column">
-                <input type="Text" name="txtfname" />
+                <input type="Text" name="txtfname" id="txtfname" />
               </div>
             </div>
             <div class="row">
               <div  class="label-column"><label>Last Name</label> </div>
-             <div class="userInput-column"> <input type="Text" name="txtlname" /></div></div>
+             <div class="userInput-column"> <input type="Text" name="txtlname" id="txtlname" /></div></div>
             
       <div class="row">
       <div class="label-column"><label>E-mail</label></div>
-         <div class="userInput-column"><input type="email" name="txtemail" /></div></div>
+         <div class="userInput-column"><input type="email" name="txtemail" id="txtemail" /></div></div>
       <div class="row">
       <div class="label-column"><label>Mobile No</label></div>
-       <div class="userInput-column"  > <input type="tel" name="txtmobile" /></div>
+       <div class="userInput-column"  > <input type="tel" name="txtmobile" id="txtmobile" /></div>
       </div>
       <div class="row">
       <div class="label-column">
         <label>Password</label></div>
         <div class="userInput-column">
-         <input type="password" name="txtpassword" />
+         <input type="password" name="txtpassword" id="txtpassword" />
       </div>
       </div>
       
       <div class="row">
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit" onclick="display()">
         </div>
       </form>
 
      
   </div>
+  <script>
+   
+
+    var validate = (function(){
+      const regexList = {
+        fname:  /^[a-z]{5,30}$/gi,
+        lname:  /^[a-z]{5,30}$/gi,
+        email:/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+        password:/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[\W_]).{8,}$/,
+        mobileNo:/^[6|7|8|9]\d{9}$/
+      };                                                                                                                                                                                    
+      return {
+          fname: (value) => {
+            return regexList.fname.test(value);
+           
+          },
+          lname: (value) => {
+            return regexList.lname.test(value);
+           
+          },
+          email: (value) => {
+            return regexList.email.test(value);
+           
+          },
+          password: (value) => {
+            return regexList.password.test(value);
+           
+          },
+          mobileNo: (value) => {
+            return regexList.mobileNo.test(value);
+           
+          }
+
+          
+      }
+    })();
+
+    function display()
+    {
+      var isFirstNameValid = validate.fname(document.getElementById("txtfname").value);
+        if(!isFirstNameValid){
+        alert("First Name is Incorrect");
+        }
+
+      var isLastNameValid = validate.lname(document.getElementById("txtlname").value);
+        if(!isLastNameValid){
+        alert("Last Name is Incorrect");
+        }
+      var isEmailInput = validate.email(document.getElementById("txtemail").value);
+      if(!isEmailInput){
+        alert("Email is Incorrect");
+      }
+      
+
+      var isMobileNoValid = validate.mobileNo(document.getElementById("txtmobile").value);
+      if(!isMobileNoValid){
+        alert("Moble No is Incorrect");
+      }
+
+      var isPasswordValidate = validate.password(document.getElementById("txtpassword").value);
+      if(!isPasswordValidate){
+        alert("Password is Incorrecrt");
+      }
+
+      if(isFirstNameValid && isLastNameValid && isEmailInput && isMobileNoValid && isPasswordValidate){
+        alert("All Data Saved Successfully");
+      }
+      
+    }
+
+  </script>
 
   </body>
 </html>
